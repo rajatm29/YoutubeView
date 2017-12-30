@@ -26,53 +26,34 @@ class MainActivity : AppCompatActivity() {
         fetchJson()
     }
 
-
     fun fetchJson() {
-
         println("attempting to fetch JSON")
         val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
 
         val client = OkHttpClient()
-
         //converted OkHttp Java syntax to Kotlin from Docs for request
         val request = Request.Builder().url(url).build()
         client.newCall(request).enqueue(object: Callback {
 
             override fun onResponse(call: Call?, response: Response?) {
-
                 val body = response?.body()?.string()
                 println(body)
-
                 val gson = GsonBuilder().create()
-
                 val homefeed = gson.fromJson(body, HomeFeed:: class.java)
-
-
-
                 runOnUiThread{
-
                     recyclerView_main.adapter = MainAdapter(homefeed)
-
                 }
 
             }
-
             override fun onFailure(call: Call?, e: IOException?) {
                 println("failed to execute request")
             }
-
         })
-
-
     }
-
-
 }
 
 
 class HomeFeed(val videos: List<Video>)
-
 class Video(val id: Int, val name:String, val link: String, val imageUrl: String,
             val numberOfViews: Int, val channel: Channel)
-
 class Channel(val name: String, val profileImageUrl: String)
