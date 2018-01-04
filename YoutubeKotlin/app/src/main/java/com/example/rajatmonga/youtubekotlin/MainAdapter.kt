@@ -4,7 +4,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.rajatmonga.youtubekotlin.HomeFeed
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
+
 
 /**
  * Created by rajatmonga on 12/28/17.
@@ -35,8 +38,22 @@ class MainAdapter(val homeFeed: HomeFeed): RecyclerView.Adapter<CustomViewHolder
 
         val video = homeFeed.videos.get(position)
         holder?.view?.textView_video_title?.text = video.name
+        holder?.view?.textView_channel_name?.text = video.channel.name + " • " + "100k Views\n5 days ago"
+
+        val thumbnailImageView = holder?.view?.imageView_video_thumbnail
+
+        Picasso.with(holder?.view?.context).load(video.imageUrl)
+                .into(thumbnailImageView)
+
+        val channelProfileImageView = holder?.view?.imageView_image_profile
+        Picasso.with(holder?.view?.context).load(video.channel.profileImageUrl).into(channelProfileImageView)
+
+
+
 
     }
+
+
 
 }
 

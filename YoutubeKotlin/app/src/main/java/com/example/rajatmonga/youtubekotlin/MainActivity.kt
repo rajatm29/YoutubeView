@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import com.example.rajatmonga.youtubekotlin.HomeFeed
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -70,9 +71,3 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-class HomeFeed(val videos: List<Video>)
-
-class Video(val id: Int, val name:String, val link: String, val imageUrl: String,
-            val numberOfViews: Int, val channel: Channel)
-
-class Channel(val name: String, val profileImageUrl: String)
