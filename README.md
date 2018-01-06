@@ -1,7 +1,7 @@
 # Recreating Youtube with Kotlin
 
 
-## 3rd Party Integrations
+## Gradle 3rd Party Integrations
 
 OkHTTP:
 ```Kotlin
