@@ -1,9 +1,11 @@
 package com.example.rajatmonga.kotlinyouttubelbta
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.rajatmonga.youtubekotlin.CourseDetailActivity
 import com.example.rajatmonga.youtubekotlin.HomeFeed
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
@@ -58,6 +60,16 @@ class MainAdapter(val homeFeed: HomeFeed): RecyclerView.Adapter<CustomViewHolder
 }
 
 class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
+
+    init {
+
+        view.setOnClickListener {
+
+            val intent = Intent(view.context, CourseDetailActivity::class.java)
+            view.context.startActivity(intent)
+        }
+
+    }
 
 }
 
