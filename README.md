@@ -1,4 +1,5 @@
-# Recreating Youtube with Kotlin
+# Youtube
+Showing the power kotlin
 
 
 ## Gradle 3rd Party Integrations
