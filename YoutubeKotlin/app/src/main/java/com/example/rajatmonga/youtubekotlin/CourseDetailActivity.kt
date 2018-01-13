@@ -28,9 +28,6 @@ class CourseDetailActivity : AppCompatActivity() {
         recyclerView_main.adapter = CourseDetailAdapter()
 
 
-
-
-
     }
 
 
@@ -53,7 +50,6 @@ class CourseDetailActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: CourseLessonViewHolder?, position: Int) {
-
 
 
         }
