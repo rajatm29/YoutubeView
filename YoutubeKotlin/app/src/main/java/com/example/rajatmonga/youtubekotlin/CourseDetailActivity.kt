@@ -61,8 +61,6 @@ class CourseDetailActivity : AppCompatActivity() {
                 val courseLessons = gson.fromJson(body, Array<CourseLesson>::class.java)
 
                 //println(body)
-
-
             }
 
             override fun onFailure(call: Call?, e: IOException?) {
