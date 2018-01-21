@@ -28,6 +28,7 @@ class CourseDetailActivity : AppCompatActivity() {
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         recyclerView_main.adapter = CourseDetailAdapter()
 
+
         val navBarTitle = intent.getStringExtra(CustomViewHolder.VIDEO_TITLE_KEY)
         supportActionBar?.title = navBarTitle
 
@@ -39,8 +40,6 @@ class CourseDetailActivity : AppCompatActivity() {
         //println(courseDetailUrl)
 
         //fetchJSON()
-
-
 
 
     }
@@ -69,7 +68,6 @@ class CourseDetailActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: CourseLessonViewHolder?, position: Int) {
-
 
 
         }
