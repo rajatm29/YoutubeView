@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.rajatmonga.youtubekotlin.CourseDetailActivity
 import com.example.rajatmonga.youtubekotlin.HomeFeed
+import com.example.rajatmonga.youtubekotlin.Video
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
 
@@ -52,21 +53,31 @@ class MainAdapter(val homeFeed: HomeFeed): RecyclerView.Adapter<CustomViewHolder
 
 
 
-
+        holder?.video = video
     }
 
 
 
 }
 
-class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
+class CustomViewHolder(val view: View, var video: Video?= null): RecyclerView.ViewHolder(view){
+
+    companion object {
+        val VIDEO_TITLE_KEY = "VIDEO_TITLE"
+        val VIDEO_ID_KEY = "VIDEO_ID"
+    }
 
     init {
 
         view.setOnClickListener {
 
             val intent = Intent(view.context, CourseDetailActivity::class.java)
+            intent.putExtra(VIDEO_TITLE_KEY, video?.name)
+            intent.putExtra(VIDEO_ID_KEY, video?.id)
+
             view.context.startActivity(intent)
+
+
         }
 
     }

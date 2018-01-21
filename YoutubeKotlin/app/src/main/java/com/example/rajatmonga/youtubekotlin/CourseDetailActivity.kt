@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.rajatmonga.kotlinyouttubelbta.CustomViewHolder
 import com.example.rajatmonga.kotlinyouttubelbta.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,9 +28,24 @@ class CourseDetailActivity : AppCompatActivity() {
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         recyclerView_main.adapter = CourseDetailAdapter()
 
+        val navBarTitle = intent.getStringExtra(CustomViewHolder.VIDEO_TITLE_KEY)
+        supportActionBar?.title = navBarTitle
+
+
+        val videoId = intent.getIntExtra(CustomViewHolder.VIDEO_ID_KEY, -1)
+
+        val courseDetailUrl = "https://api.letsbuildthatapp.com/youtube/course_detail?id=" + videoId
+
+        //println(courseDetailUrl)
+
+        //fetchJSON()
 
 
 
+
+    }
+
+    private fun fetchJSON() {
 
     }
 
@@ -61,6 +77,8 @@ class CourseDetailActivity : AppCompatActivity() {
     }
 
     private class CourseLessonViewHolder(val customView: View): RecyclerView.ViewHolder(customView) {
+
+
 
     }
 }
