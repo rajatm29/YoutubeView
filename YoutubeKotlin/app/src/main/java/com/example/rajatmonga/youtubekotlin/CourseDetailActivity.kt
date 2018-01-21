@@ -16,7 +16,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.rajatmonga.kotlinyouttubelbta.CustomViewHolder
 import com.example.rajatmonga.kotlinyouttubelbta.R
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.*
+import java.io.IOException
 
 class CourseDetailActivity : AppCompatActivity() {
 
@@ -33,18 +36,39 @@ class CourseDetailActivity : AppCompatActivity() {
         supportActionBar?.title = navBarTitle
 
 
-        val videoId = intent.getIntExtra(CustomViewHolder.VIDEO_ID_KEY, -1)
-
-        val courseDetailUrl = "https://api.letsbuildthatapp.com/youtube/course_detail?id=" + videoId
 
         //println(courseDetailUrl)
 
-        //fetchJSON()
+        fetchJSON()
 
 
     }
 
     private fun fetchJSON() {
+        val videoId = intent.getIntExtra(CustomViewHolder.VIDEO_ID_KEY, -1)
+        val courseDetailUrl = "https://api.letsbuildthatapp.com/youtube/course_detail?id=" + videoId
+
+        val client = OkHttpClient()
+        val request = Request.Builder().url(courseDetailUrl).build()
+
+        client.newCall(request).enqueue(object: Callback {
+            override fun onResponse(call: Call?, response: Response?) {
+
+
+                val body = response?.body()?.string()
+
+                val gson = GsonBuilder().create()
+                val courseLessons = gson.fromJson(body, Array<CourseLesson>::class.java)
+
+                //println(body)
+
+
+            }
+
+            override fun onFailure(call: Call?, e: IOException?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
 
     }
 
