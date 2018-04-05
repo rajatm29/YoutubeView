@@ -52,9 +52,6 @@ class MainAdapter(val homeFeed: HomeFeed): RecyclerView.Adapter<CustomViewHolder
 
         holder?.video = video
     }
-
-
-
 }
 
 class CustomViewHolder(val view: View, var video: Video?= null): RecyclerView.ViewHolder(view){
