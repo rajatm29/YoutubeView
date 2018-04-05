@@ -1,5 +1,5 @@
 # Youtube
-Showing the power kotlin
+Flexing Kotlin to re-create the YouTube App
 
 
 ## Gradle 3rd Party Integrations
