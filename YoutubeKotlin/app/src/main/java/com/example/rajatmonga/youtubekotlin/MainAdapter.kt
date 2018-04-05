@@ -26,7 +26,6 @@ class MainAdapter(val homeFeed: HomeFeed): RecyclerView.Adapter<CustomViewHolder
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomViewHolder {
-
         // how we create a view
 
         val layoutInflater = LayoutInflater.from(parent?.context)
@@ -74,7 +73,6 @@ class CustomViewHolder(val view: View, var video: Video?= null): RecyclerView.Vi
             intent.putExtra(VIDEO_ID_KEY, video?.id)
 
             view.context.startActivity(intent)
-
 
         }
 
