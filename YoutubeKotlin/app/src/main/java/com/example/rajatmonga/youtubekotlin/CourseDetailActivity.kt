@@ -1,10 +1,5 @@
 package com.example.rajatmonga.youtubekotlin
 
-/**
- * Created by rajatmonga on 1/11/18.
- */
-
-
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
@@ -31,11 +26,8 @@ class CourseDetailActivity : AppCompatActivity() {
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         recyclerView_main.adapter = CourseDetailAdapter()
 
-
         val navBarTitle = intent.getStringExtra(CustomViewHolder.VIDEO_TITLE_KEY)
         supportActionBar?.title = navBarTitle
-
-
 
         //println(courseDetailUrl)
 
