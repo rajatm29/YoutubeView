@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     fun fetchJson() {
         println("attempting to fetch JSON")
-        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
+        //URL HERE
+        val url = "https://api._.com/youtube/home_feed"
 
         val client = OkHttpClient()
         //converted OkHttp Java syntax to Kotlin from Docs for request
