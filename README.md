@@ -1,5 +1,5 @@
 # YoutubeView
-Flexing Kotlin to re-create the YouTube App
+Re-creating the Youtube App & flexing Kotlin
 
 
 ## Gradle 3rd Party Integrations
