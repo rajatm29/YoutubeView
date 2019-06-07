@@ -19,3 +19,8 @@ Circle Image View:
 ```Kotlin
     compile 'de.hdodenhof:circleimageview:2.2.0'
 ```
+
+## Tests
+TBD
+
+
