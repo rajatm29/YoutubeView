@@ -1,4 +1,4 @@
-# YoutubeView
+# Youtube
 Re-creating the Youtube App & flexing Kotlin
 
 ## Gradle 3rd Party Integrations
