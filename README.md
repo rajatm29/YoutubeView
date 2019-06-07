@@ -23,4 +23,7 @@ Circle Image View:
 ## Tests
 TBD
 
+## License
+MIT License
+
 
